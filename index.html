@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Valoran – AI mentor za moške</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body style="font-family: 'IBM Plex Sans', sans-serif; background-color: #101010;">
+    <div class="sidebar">
+      <button id="new-chat-btn">+ Nov pogovor</button>
+      <ul id="conversation-list"></ul>
+    </div>
+
+    <div class="container">
+      <section class="hero">
+        <img src="Logo.png" alt="Valoran Logo" class="logo"/>
+        <p class="subtitle">Tvoj AI mentor za disciplino, moč in jasnost</p>
+        <button id="forge-btn" class="hero-cta">Začni Forge Yourself</button>
+
+        <button id="start-forge-btn" class="forge-btn">Začni Forge Yourself</button>
+      </section>
+
+      <section id="chat-box" class="chat-container"></section>
+
+      <form id="chat-form" class="chat-form">
+        <textarea
+          id="user-input"
+          placeholder="Vnesi vprašanje..."
+          autocomplete="off"
+          rows="1"
+        ></textarea>
+        <button type="submit" class="send-button">Pošlji</button>
+      </form>
+
+      <button id="scroll-btn" class="scroll-button">▼</button>
+    </div>
+
+
+    <!-- Onboarding Modal -->
+    <div id="onboardingModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Začni: 60 sekund</h2>
+        <p class="modal-sub">Odgovori kratko. Valoran te bo vodil naprej.</p>
+        <label>Ime</label>
+        <input id="vb_name" type="text" placeholder="npr. Luka" />
+        <label>Starost</label>
+        <input id="vb_age" type="number" min="12" max="90" placeholder="npr. 28" />
+        <label>Glavni cilj</label>
+        <select id="vb_goal">
+          <option value="disciplina">Disciplina</option>
+          <option value="telo">Telo</option>
+          <option value="um">Um</option>
+          <option value="finance">Finance</option>
+        </select>
+        <label>Največji izziv</label>
+        <input id="vb_challenge" type="text" placeholder="npr. odlašanje, pomanjkanje fokusa" />
+        <label>Čas na dan (minute)</label>
+        <input id="vb_time" type="number" min="5" max="180" step="5" placeholder="npr. 30" />
+        <label>Email (za jutranje/večerne opomnike)</label>
+        <input id="vb_email" type="email" placeholder="tvoj@email.com" />
+        <div class="modal-actions">
+          <button id="vb_start" class="primary">Začni</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paywall Modal -->
+    <div id="paywallModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Odkleni naprej</h2>
+        <p class="modal-sub">Nadaljuj polni program. 7 € prvi mesec, nato 8 €/mesec (1 steber) ali 20 €/mesec (All Access).</p>
+        <div class="modal-actions">
+          <button id="vb_unlock" class="primary">Odkleni dostop</button>
+          <button id="vb_pdf" class="ghost">Pošlji mi D1 PDF</button>
+        </div>
+        <p class="fineprint">* Demo: gumbi so zaenkrat “neškodljivi”.</p>
+      </div>
+    </div>
+
+    <!-- Email capture (PDF) -->
+    <div id="emailModal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Prejmi D1 PDF na email</h3>
+        <input id="vb_email_capture" type="email" placeholder="tvoj@email.com" />
+        <div class="modal-actions">
+          <button id="vb_email_send" class="primary">Pošlji</button>
+          <button id="vb_email_cancel" class="ghost">Prekliči</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
